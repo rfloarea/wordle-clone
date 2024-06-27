@@ -1,3 +1,8 @@
+import { Header } from "./Header"
+
+
 export function App() {
-    return <h1>Wordle</h1>
+    return (
+        <Header />
+    );
 }
