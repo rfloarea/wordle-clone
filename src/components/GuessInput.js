@@ -3,29 +3,29 @@ import React from 'react';
 /** This component is/controls the input field where the player submits their word
  * It takes two arguments:
  * 1. gameState, which is used here to disable the input field if the game is over
- * 2. handleGuessSubmit, which is used here to send our player's guess to the Game component (which holds all the game logic)
+ * 2. handletentativeGuessSubmit, which is used here to send our player's tentativeGuess to the Game component (which holds all the game logic)
  * There is some client-side validation which checks for:
- * 1. If the guess is exactly 5 characters
- * 2. If the guess is only letters
+ * 1. If the tentativeGuess is exactly 5 characters
+ * 2. If the tentativeGuess is only letters
  */
 
 export function GuessInput({ handleGuessSubmit }) {
-    const [guess, setGuess] = React.useState('');
+    const [tentativeGuess, setTentativeGuess] = React.useState('');
 
     function handleSubmit(ev) {
         ev.preventDefault();
-        console.log('guess test', guess)
-        handleGuessSubmit(guess)
+        console.log('Tentative Guess:', tentativeGuess)
+        handleGuessSubmit(tentativeGuess)
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <input
                 type='text'
-                value={guess}
+                value={tentativeGuess}
                 onChange={(ev) => {
-                    const nextGuess = ev.target.value.toUpperCase();
-                    setGuess(nextGuess);
+                    const nextTentativeGuess = ev.target.value.toUpperCase();
+                    setTentativeGuess(nextTentativeGuess);
                 }}
             >
             </input>
