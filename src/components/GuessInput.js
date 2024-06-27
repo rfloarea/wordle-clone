@@ -10,10 +10,11 @@ import React from 'react';
  */
 
 export function GuessInput({ handleGuessSubmit }) {
-    const [guess, setGuess] = React.useState();
+    const [guess, setGuess] = React.useState('');
 
     function handleSubmit(ev) {
         ev.preventDefault();
+        console.log('guess test', guess)
         handleGuessSubmit(guess)
     }
 
@@ -23,7 +24,7 @@ export function GuessInput({ handleGuessSubmit }) {
                 type='text'
                 value={guess}
                 onChange={(ev) => {
-                    const nextGuess = ev.target.value
+                    const nextGuess = ev.target.value.toUpperCase();
                     setGuess(nextGuess);
                 }}
             >
