@@ -14,7 +14,6 @@ export function GuessInput({ handleGuessSubmit }) {
 
     function handleSubmit(ev) {
         ev.preventDefault();
-        console.log('Tentative Guess:', tentativeGuess)
         handleGuessSubmit(tentativeGuess)
     }
 
