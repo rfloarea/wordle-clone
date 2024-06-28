@@ -7,27 +7,37 @@ import React from 'react';
  * There is some client-side validation which checks for:
  * 1. If the tentativeGuess is exactly 5 characters
  * 2. If the tentativeGuess is only letters
+ * 
  */
 
-export function GuessInput({ handleGuessSubmit }) {
+export function GuessInput({ gameState, handleGuessSubmit }) {
     const [tentativeGuess, setTentativeGuess] = React.useState('');
 
     function handleSubmit(ev) {
         ev.preventDefault();
-        handleGuessSubmit(tentativeGuess)
+        handleGuessSubmit(tentativeGuess);
+        setTentativeGuess('');
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='guess-input-wrapper'>
+            <label htmlFor='guess-input'>Enter guess:</label>
             <input
+                id='guess-input'
                 type='text'
                 value={tentativeGuess}
-                onChange={(ev) => {
-                    const nextTentativeGuess = ev.target.value.toUpperCase();
-                    setTentativeGuess(nextTentativeGuess);
+                onChange={(event) => {
+                    const nextGuess = event.target.value.toUpperCase();
+                    setTentativeGuess(nextGuess);
                 }}
-            >
-            </input>
+                required
+                minLength={5}
+                maxLength={5}
+                pattern='[a-zA-Z]{5}'
+                title='5 letter words only'
+                disabled={gameState !== 'running'}
+
+            />
         </form>
     );
 }
