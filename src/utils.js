@@ -1,9 +1,9 @@
-// used to select a random word from our list words
+// used to select a random word from our list of words
 export const sample = (arr) => {
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
-// a handy way to create a range of elements and things
+// used to create a certain number of elements
 export const range = (start, end, step = 1) => {
   let output = [];
   if (typeof end === 'undefined') {
