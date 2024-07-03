@@ -1,12 +1,16 @@
-import { Header } from "./Header"
-import { Game } from "./Game";
+import Game from './Game';
+import Header from './Header';
 
+function App() {
+  return (
+    <div className="wrapper">
+      <Header />
 
-export function App() {
-    return (
-        <>
-            <Header />
-            <Game />
-        </>
-    );
+      <div className="game-wrapper">
+        <Game />
+      </div>
+    </div>
+  );
 }
+
+export default App;
