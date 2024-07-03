@@ -10,11 +10,11 @@ import GuessResults from './GuessResults';
 
 import WonBanner from './WonBanner';
 import LostBanner from './LostBanner';
-import Keyboard from './Keyboard';
 
 
 function Game() {
   const [answer, setAnswer] = React.useState(() => sample(WORDS));
+  console.log({answer})
 
   // running | won | lost
   const [gameStatus, setGameStatus] = React.useState('running');
@@ -50,7 +50,6 @@ function Game() {
         gameStatus={gameStatus}
         handleSubmitGuess={handleSubmitGuess}
       />
-      <Keyboard validatedGuesses={validatedGuesses} />
 
       {gameStatus === 'won' && (
         <WonBanner
