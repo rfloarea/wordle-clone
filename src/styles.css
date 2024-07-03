@@ -234,3 +234,8 @@ h1 {
     transform: translateY(0%);
   }
 }
+
+footer {
+  text-align: center;
+  color: var(--color-gray-300);
+}
