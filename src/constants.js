@@ -1,1 +1,1 @@
-export const NUM_OF_GUESSES = 6;
+export const NUM_OF_GUESSES_ALLOWED = 6;
