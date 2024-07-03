@@ -1,16 +1,25 @@
-import React from "react";
+import React from 'react';
 
-// these are the rows of cells
-export function Guess() {
-    return (
-        <Cell />
-    );
+import { range } from '../utils';
+
+function Cell({ letter, status }) {
+  const className = status ? `cell ${status}` : 'cell';
+
+  return <span className={className}>{letter}</span>;
 }
 
-// these are the individual 'cells' for each letter of the words
-// we will need to split the characters of the guess into each cell
-function Cell() {
-    return (
-        <p></p>
-    );
+function Guess({ value }) {
+  return (
+    <p className="guess">
+      {range(5).map((num) => (
+        <Cell
+          key={num}
+          letter={value ? value[num].letter : undefined}
+          status={value ? value[num].status : undefined}
+        />
+      ))}
+    </p>
+  );
 }
+
+export default Guess;
