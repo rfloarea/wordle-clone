@@ -17,8 +17,9 @@ Just another clone of the popular game, Wordle.
 6. The player gets six tries to guess the word and is shown a banner at the end for a win or lose.
 7. They can restart the game for a new word if they want
 
-## Sticky Points in Development
+## Things I learned
 
 - Picking up Parcel for the first time took a second to figure out. But it's simple enough.
 - File structure. Establishing an organized file structure is a beautiful thing. It's also a bit tricky.
 - Extremely slow computer. This thing is from 2014 with no aftermarket parts, and it shows.
+- It's very detrimental to expect that things will go all according to plan on the first try. I had to regroup and rethink things multiple times. Which would have been fine (or at least _more_ fine) if I had truly anticipated this. No amount of reading-about-failure prepares you for failures. You just have to go through it.
