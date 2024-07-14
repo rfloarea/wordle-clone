@@ -1,15 +1,20 @@
 {
   "name": "wordle-clone",
+  "homepage": "https://github.com/rfloarea/wordle-clone",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"},
+    "build": "parcel build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "parcel": "latest",
     "process": "^0.11.10"
   }
